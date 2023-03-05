@@ -1,0 +1,510 @@
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: blueviolet;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+/********************************** OPENING *********************************/
+.opening {
+    height: 100vh;
+    width: 100%;
+}
+
+/********************************** COLORS **********************************/
+.color{
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+    position: relative;
+    overflow: hidden;
+}
+.color .blue{
+    background-color: blue;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(50px);
+    animation-name: animationBlue;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    z-index: 0;
+}
+.color .red{
+    background-color: red;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -100px;
+    right: -20px;
+    filter: blur(50px);
+    animation-name: animationRed;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    z-index: 0;
+}
+.color .orange{
+    background-color: orange;
+    width: 1000px;
+    height: 1000px;
+    border-radius: 50%;
+    position: absolute;
+    right: -80px;
+    top: -400px;
+    filter: blur(50px);
+    animation-name: animationOrange;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    z-index: 0;
+}
+.color .yellow{
+    background-color: yellow;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -80px;
+    left: -40px;
+    filter: blur(50px);
+    animation-name: animationYellow;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    z-index: 0;
+}
+
+.background{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,-50%);
+    width: 90%;
+    background-color: transparent;
+    height: 90vh;
+    margin: auto;
+    border-radius: 50px;
+    backdrop-filter: blur(200px);
+    box-shadow: inset 2px 2px 100px rgba(250,250,250,0.3);
+    transition: all 0.2s ease-in;
+}
+
+/******************************* CONTENT *******************************/
+.content{
+    width: 500px;
+    height: 500px;
+    margin: auto;
+}
+
+.title{
+    color: white;
+    font-size: 50px;
+    animation: lights 5s 750ms linear infinite;
+    letter-spacing: 5px;
+}
+.description{
+    color: white;
+    font-size: 20px;
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+span {
+    display: inline-block;
+    opacity: 0;
+    filter: blur(4px);
+  }
+  
+span:nth-child(1) {
+    animation: fade-in 2s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+span:nth-child(2) {
+    animation: fade-in 2s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+span:nth-child(3) {
+    animation: fade-in 2s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+span:nth-child(4) {
+    animation: fade-in 2s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+  
+span:nth-child(5) {
+    animation: fade-in 2s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+/* tablet */
+@media screen and (max-width:1100px){
+    .title{
+        font-size: 30px;
+    }
+}
+
+/* phone */
+@media screen and (max-width:300px){
+    .description{
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-height:500px){
+    .title{
+        font-size: 42px;
+    }
+}
+
+@media screen and (max-height:300px){
+    .title{
+        font-size: 30px;
+    }
+}
+
+/******************************* LOGO *******************************/
+.logo path {
+    stroke-dasharray: 0 100;
+}
+
+.background:hover path{
+    stroke-dasharray: 300 100;
+    transition: 1s;
+}
+
+/* tablet */
+@media screen and (max-width:1100px){
+    .logo path {
+        stroke-dasharray: 300 100;
+    }
+    .content{
+        margin: 25% auto;
+    }
+
+}
+
+@media screen and (max-width:800px){
+    svg{
+        width: 50%;
+        height: 50%;
+    }
+    .content{
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+}
+
+/* phone */
+@media screen and (max-width:500px){
+    svg{
+        width: 50%;
+        height: 50%;
+    }
+    .content{
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width:300px){
+    svg{
+        width: 30%;
+        height: 30%;
+    }
+}
+
+@media screen and (max-height:800px){
+    svg{
+        width: 70%;
+        height: 70%;
+    }
+    .content{
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-height:650px){
+    svg{
+        width: 60%;
+        height: 60%;
+    }
+}
+
+@media screen and (max-height:450px){
+    svg{
+        width: 50%;
+        height: 50%;
+    }
+}
+
+@media screen and (max-height:350px){
+    svg{
+        width: 40%;
+        height: 40%;
+    }
+}
+
+/****************************** ANIMATIONS ******************************/ 
+
+@keyframes animationBlue {
+    0% {top: -50px; left: -20px}
+    25% {top: 100px; left: 40px}
+    50% {top: 250px; left: 800px}
+    75% {top: 100px; left: 40px}
+    100% {top: -50px; left: -20px}
+}
+
+@keyframes animationRed {
+    0% {bottom: -100px; right: -20px}
+    25% {bottom: 0px; right: 20px}
+    50% {bottom: 500px; right: 50px}
+    75% {bottom: 100px; right: -10px}
+    100% {bottom: -100px; right: -20px}
+}
+
+@keyframes animationOrange {
+    0% {right: -80px; top: -400px}
+    25% {right: 0px; top: -10px}
+    50% {right: 200px; top: 50px}
+    75% {right: 100px; top: -200px}
+    100% {right: -80px; top: -400px}
+}
+
+@keyframes animationYellow {
+    0% {bottom: -80px; left: -40px}
+    25% {bottom: 50px; left: -60px}
+    50% {bottom: 300px; left: 80px}
+    75% {bottom: 30px; left: -50px}
+    100% {bottom: -80px; left: -40px}
+}
+
+@keyframes lights {
+    0%{
+        color:hsl(230, 40%, 80%);
+        text-shadow:
+            0 0 16px hsla(320, 100%, 50%, 0.2),
+            0 0 2px hsla(320, 100%, 60%, 0.3),
+            -16px -2px 8px hsla(40, 100%, 60%, 0),
+            16px 2px 8px hsla(200, 100%, 60%, 0);
+    }
+
+    30%{
+        color: hsl(230, 80%, 90%);
+        text-shadow:
+            0 0 16px hsla(320, 100%, 50%, 0.5),
+            0 0 2px hsla(320, 100%, 60%, 0.5),
+            -8px -2px 4px hsla(40, 100%, 60%, 0.2),
+            8px 2px 4px hsla(200, 100%, 60%, 0.4);
+    }
+
+    40%{
+        color: hsl(230, 100%, 95%);
+        text-shadow:
+            0 0 16px hsla(320, 100%, 50%, 0.5),
+            0 0 2px hsla(320, 100%, 90%, 0.5),
+            -4px -2px 2px hsla(40, 100%, 60%, 0.2),
+            4px -2px 2px hsla(20, 100%, 60%, 0.4);
+    }
+
+    70%{
+        color: hsl(230, 80%, 90%);
+        text-shadow:
+            0 0 16px hsla(320, 100%, 50%, 0.5),
+            0 0 2px hsla(320, 100%, 60%, 0.5),
+            8px -2px 4px hsla(40, 100%, 60%, 0.2),
+            -8px 2px 4px hsla(20, 100%, 60%, 0.4);
+    }
+
+    100%{
+        color: hsl(230, 40%, 80%);
+        text-shadow:
+            0 0 16px hsla(320, 100%, 50%, 0.2),
+            0 0 2px hsla(320, 100%, 60%, 0.3),
+            16px -2px 8px hsla(40, 100%, 60%, 0),
+            -16px 2px 8px hsla(200, 100%, 60%, 0);
+
+    }
+}
+
+@keyframes fade-in {
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+}
+
+@keyframes scale {
+    100% {
+      transform: scale(1);
+    }
+}
+
+
+
+/****************************** SERVICES ******************************/ 
+.services {
+    color: white;
+    width: 100%;
+    background-color: rgba(48, 48, 48, 0.8);
+}
+.services .container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 40px;
+}
+.services .item{
+    border-radius: 30px;
+    padding: 40px;
+    transform: translate(0px, 0px);
+    transition: all 0.2s ease-in-out;
+}
+.services .item:hover{
+    transform: translate(10px, -10px);
+}
+
+.services .icons{
+    font-size: 50px;
+}
+
+.services h3{
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background:  
+        linear-gradient(to right, rgb(197, 100, 200), rgb(200, 198, 100)),
+        linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 2px;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s;
+}
+.services .item:hover h3{
+    background-size: 0 2px, 100% 2px;
+}
+
+@media screen and (min-width:1800px){
+    .services .item{
+        padding: 100px;
+    }
+}
+
+/* tablet */
+@media screen and (max-width:1100px){
+    .services .item{
+        padding: 20px;
+    }
+    .services h3{
+        font-size: 20px;
+    }
+}
+
+/* phone */
+@media screen and (max-width:700px){
+    .services .container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-height:400px){
+    .services h3{
+        font-size: 15px;
+    }
+}
+
+/****************************** SIGN UP ******************************/ 
+.signup{
+    border-radius: 30px 30px 0 0;
+    position: relative;
+}
+
+.signup img {
+    height: 600px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.join {
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    color: white;
+    background-color: rgba(49, 49, 49, 0.5);
+    padding: 0px 40px 40px ;
+    border-radius: 30px;
+    transform: scale(1) translate(0, 0);
+    transition: all 0.3s ease-out;
+}
+.join:hover{
+    transform: scale(1.05);
+}
+.join h2{
+    font-size: 50px;
+}
+
+.join .button {
+    background-image:linear-gradient(45deg,rgb(183, 129, 233),rgb(116, 30, 196)) ;
+    padding: 20px;
+    border-radius: 10px;
+    transition: background-image 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.join .button:hover{
+    background-image:linear-gradient(45deg,rgb(233, 129, 190),rgb(196, 143, 30)) ;
+
+}
+
+/* phone */
+@media screen and (max-width:500px){
+    .join {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        padding: 0px 20px 20px ;
+    }
+    .join:hover{
+        transform: scale(1);
+        transform: translate(50%, -50%)
+    }
+    .join h2{
+        font-size: 35px;
+    }
+}
+
+
+/****************************** FOOTER ******************************/ 
+footer {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    color: white;
+}
+footer .reseaux-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 50px;
+    font-size: 25px;
+}
+
+footer .reseaux-item{
+    cursor: pointer;
+    transform: scale(1) rotate(0deg);
+    transition: all 0.5s ease-out;
+}
+footer .reseaux-item:hover{
+    transform: scale(1.3) rotate(360deg);
+}
+
+/* phone */
+@media screen and (max-width:350px){
+    footer {
+        width: 240px;
+    }
+}
